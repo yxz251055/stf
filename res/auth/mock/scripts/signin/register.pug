@@ -1,0 +1,31 @@
+.login2(ng-controller='RegisterCtrl')
+  .login-wrapper
+    a(href='./')
+      img(width='160', height='160', src='/static/logo/exports/STF-128.png', title='STF')
+
+    form(name='signin', novalidate, ng-submit='submit()')
+      .alert.alert-danger(ng-show='error')
+        span(ng-show='error.$invalid', translate) Check errors below
+        span(ng-show='error.$incorrect', translate) Incorrect login details
+        span(ng-show='error.$server', translate) Server error. Check log output.
+        span(ng-show='error.$check', translate) 用户名或密码错误，请检查！！
+
+      .form-group
+        .input-group
+          span.input-group-addon
+            i.fa.fa-user
+          input.form-control(ng-model='username', name='username', required, type='text', placeholder='用户名',
+          autocorrect='off', autocapitalize='off', spellcheck='false', autocomplete='section-login username')
+        .alert.alert-warning(ng-show='signin.username.$dirty && signin.username.$invalid')
+          span(translate) 请输入账号
+
+      .form-group
+        .input-group
+          span.input-group-addon
+            i.fa.fa-user
+          input.form-control(ng-model='password', name='password', required, type='password', placeholder='密码',
+          autocorrect='off', autocapitalize='off', spellcheck='false', autocomplete='section-login password')
+        .alert.alert-warning(ng-show='signin.password.$dirty && signin.password.$invalid')
+          span(translate) 请输入密码
+
+      input.btn.btn-lg.btn-primary.btn-block(type='submit', value='注册')

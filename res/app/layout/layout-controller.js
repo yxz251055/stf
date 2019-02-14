@@ -1,6 +1,6 @@
 module.exports =
   function LayoutCtrl(LanguageService, $rootScope, hotkeys, $filter, gettext) {
-    LanguageService.updateLanguage()
+    LanguageService.updateLanguage
 
     function toggleAdminMode() {
       var enabled = $filter('translate')(gettext('Admin mode has been enabled.'))

@@ -27,7 +27,7 @@ module.exports =
 
     LanguageService.settingKey = 'selectedLanguage'
     LanguageService.supportedLanguages = supportedLanguages
-    LanguageService.defaultLanguage = 'en'
+    LanguageService.defaultLanguage = 'zh_CN'
     LanguageService.detectedLanguage =
       onlySupported(detectLanguage(), LanguageService.defaultLanguage)
 
@@ -40,6 +40,7 @@ module.exports =
     )
 
     function updateLanguage() {
+      //切换语言
       gettextCatalog.setCurrentLanguage(LanguageService.selectedLanguage)
     }
 
